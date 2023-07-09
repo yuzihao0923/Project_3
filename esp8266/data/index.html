@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<br lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Clock/Weather Station</title>
+    <style>
+        body{
+            background-image: url(background.png);
+            background-repeat:no-repeat;
+            background-position: center top;
+            background-color: rgba(220, 38, 38, 0.2);
+        }
+        .center{
+            text-align: center;
+        }
+        
+        .kevin{
+	        display: flex;
+	        justify-content: space-around;
+	        align-items: center;
+        }
+        h1 {
+            color: rgb(0, 255, 64);
+            font-size: 50px;
+        }
+        h2{
+            color: blueviolet;
+            font-size: 30px;
+        }
+        table{
+            align-items: center;
+        }
+        figure{
+            margin: 0;
+        }
+
+        .wrap{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            overflow-x: auto;
+            padding-inline: 6vmin;
+            padding-block: 12vmin;
+            gap: 3vmin; 
+            scroll-snap-type: x mandatory;
+            
+        }
+        .product-card{
+            width: 86vw;
+            box-shadow: 0 2px 40px rgba(0, 0, 0, 15%);
+            padding: 1.2rem;
+            border-radius: 10px;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+        .product-card_hardware{
+            font-size: 0.8rem;
+            color: rgb(102, 102, 102);
+        }
+        .product-card_software{
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .product-card_HTML{
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+    </style>
+</head>
+
+<body>
+ 
+    <h1 id="top">
+        <div class="top">
+            <div>
+            <a href="http://www.ait.ie" target="_blank">
+               <img src="https://www.ait.ie/assets/favicon/favicon-196x196.png" /> 
+            </a>
+            </div>
+            <div>
+               <a href="https://2021.elearning.ait.ie/login/index.php" target="blank">
+                <img src="TUS.png" width="196" height="196"/>
+            </a>
+            </div>
+            
+           <span class="center">
+               <strong>Project - Internet Clock/Weather Station </strong>
+           </span>
+        </div>
+        <br />
+        <br />
+        <input type="file" name="inputfile"
+            id="inputfile">
+    <br>
+   
+    <pre id="output"></pre>
+      
+    <script type="text/javascript">
+        document.getElementById('inputfile')
+            .addEventListener('change', function() {
+              
+            var fr=new FileReader();
+            fr.onload=function(){
+                document.getElementById('output')
+                        .textContent=fr.result;
+            }
+              
+            fr.readAsText(this.files[0]);
+        })
+    </script>
+        <br />
+        
+        
+
+        <br />
+        <br />
+
+        <div>
+            <h1><strong>Introducion</strong></h1>
+            
+            <h2>
+            <span>
+                <strong>Teacher:</strong>
+                <div class="kevin">
+                <img src="kevin.jpg" width="300">
+                </div>
+            </span> </div></br>
+            </h2>
+            
+            <h2>
+            <span>
+                <strong>Student:</strong> 
+                <table align="center" border="1">
+                    <tr>
+                        <th>Zihao Yu</th>
+                        <th>Erzhuang Gao</th>
+                        <th>Ernest</th>
+                    </tr>
+
+                    <tr>
+                        <td align="center"><img src="zihao.jpg" width="100"></td>
+                        <td align="center"><img src="erzhuang.jpg" width="100" height="100"></td>
+                        <td><img src="Ernest.jpg" width="100" height="100"></td>
+                    </tr>
+
+                </table>
+            </span></br>
+            </h2>
+        </div>
+        
+        <br>
+            <span>
+                <h1>
+                    Details for our Project
+                </h1>
+            </span></br>
+
+            <span>
+                <h2>
+                    (i):Overview of Project
+                </h2>
+            </span></br>
+
+            <span>
+                <h2>
+                    (ii):The compent we used
+                </h2>
+                <table border="1" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quality</th>
+                        <th>Function</th>
+                    </tr>
+                </thead>
+ 
+                <tbody>
+                    <tr>
+
+                        <td><a href="http://store.arduino.cc/products/arduino-mega-2560-rev3#" target="blank">Arduino Megia</a></td>
+                        <td>1</td>
+                        <td><a href="Arduino_mega.html" target="_blank">The main compenent to control all the parts</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="https://www.espressif.com/en/products/socs/esp8266" target="blank">Esp8266</a></td>
+                        <td>1</td>
+                        <td>Like a server connect Arduino and website</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="https://learn.adafruit.com/dht" target="blank">Dht-22</a></td>
+                        <td>1</td>
+                        <td>Detects temperature and humidity</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="https://create.arduino.cc/projecthub/najad/interfacing-lcd1602-with-arduino-764ec4" target="blank">LED 1602A</a></td>
+                        <td>2</td>
+                        <td><a href=1602A.html target="_blank">Display the words</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="https://www.maximintegrated.com/cn/products/analog/real-time-clocks/DS1307.html" target="blank">DS1307</a></td>
+                        <td>1</td>
+                        <td>Create a clock to Arduino</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wires</td>
+                        <td>several</td>
+                        <td>Connect between components</td>
+                    </tr>
+                </tbody>
+
+                </table>
+            </span></br>
+
+            <span>
+                <h2>
+                    (iii):The process recored
+                </h2>
+
+                <section class="wrap">
+                    <div class="product-card_hardware">
+                        <div class="product-card_name">
+                        Erzhuang Gao
+                        </div>
+                        <figure class="product-card_image" >
+                        <img src="picture1.jpg" width="500xp">
+                        </figure>
+                    </div>  
+                    <div class="product-card_software">
+                        <div class="product-card_name">
+                        Ernest
+                        </div>
+                        <figure class="product-card_image" >
+                        <img src="picture2.jpg" width="500xp">
+                        </figure>
+                    </div>  
+                    <div class="product-card_HTML">
+                        <div class="product-card_name">
+                        Zihao Yu
+                        </div>
+                        <figure class="product-card_image">
+                        <img src="picture3.jpg" width="500xp">
+                        </figure>
+                    </div>  
+                  
+                </section>
+            </span></br>
+        </div>
+    
+    </h1>
+    
+    
+   
+   
+</body>
+
+</html>
